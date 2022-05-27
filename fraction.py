@@ -1,18 +1,19 @@
 
 
 class Fraction:
-    def __init__(self, numerator, denumerator):
+    def __init__(self, numerator, denominator):
         self.numerator = numerator
-        self.denumerator = denumerator
+        self.denominator = denominator
 
     def __add__(self, other):
-        result_num = self.numerator * other.denumerator + other.numerator * self.denumerator
-        result_denum = self.denumerator * other.denumerator
-        return Fraction(result_num, result_denum)
+        result_num = self.numerator * other.denominator + other.numerator * self.denominator
+        result_denom = self.denominator * other.denominator
+        print(type(result_num))
+        return Fraction(result_num, result_denom)
 
 
     def __str__(self):
-        return "{0}/{1}".format(self.numerator, self.denumerator)
+        return "{0}/{1}".format(self.numerator, self.denominator)
 
 if __name__ == '__main__': #if fraction.py will be imported as a module this will not run
     example = Fraction(1, 2)
